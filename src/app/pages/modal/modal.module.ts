@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TelaTrocarSenhaMatriculaPage } from './tela-trocar-senha-matricula.page';
+import { ModalPage } from './modal.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TelaTrocarSenhaMatriculaPage
+    component: ModalPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TelaTrocarSenhaMatriculaPage]
+  declarations: [ModalPage]
 })
-export class TelaTrocarSenhaMatriculaPageModule {}
+export class ModalPageModule {}

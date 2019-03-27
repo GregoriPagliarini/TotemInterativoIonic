@@ -1,51 +1,58 @@
 <ion-header>
   <ion-toolbar class="display-3 text-center ">
-        Posso te ajudar?
+    Posso te ajudar?
 
   </ion-toolbar>
 </ion-header>
 
 
+
+
 <ion-content>
-  <div class="container">
+  <div style='margin: 8px;'>
     <!-- Linha 01 -->
     <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Trocar senha</h5>
+      <div class="col-sm-6 d-flex align-items-stretch">
+        <div class="card h-100 w-100">
+          <i class="fas fa-key  text-center" style="font-size: 400%;"></i>
+          <div class="card-body ">
             <p class="card-text">Clique aqui para trocar a senha de login do wi-fi/acesso aos computadores nos laboratórios.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <ion-button expand="block" fill="solid" size="default" color="dark" mode="md"
+              (click)="pushPage('/troca-senha')">Trocar senha</ion-button>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card">
+
+
+      <div class="col-sm-6 d-flex align-items-stretch">
+        <div class="card h-100 w-100">
+          <i class="fas fa-clock text-center" style="font-size: 400%;"></i>
           <div class="card-body">
-            <h5 class="card-title">Horário das aulas</h5>
             <p class="card-text">Clique aqui para visualizar os horários de suas aulas.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <ion-button expand="block" fill="solid" size="default" color="dark" mode="md"
+              (click)="pushPage('/troca-senha')">Horário das aulas</ion-button>
           </div>
         </div>
       </div>
     </div>
     <!-- Linha 02 -->
     <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
+      <div class="col-sm-6 d-flex align-items-stretch">
+        <div class="card h-100 w-100">
+          <i class="fas fa-calendar-alt text-center" style="font-size: 400%;"></i>
           <div class="card-body">
-            <h5 class="card-title">Consultar laboraórios</h5>
             <p class="card-text">Clique aqui para consultar os laboratórios e suas respectivas aulas.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <ion-button expand="block" fill="solid" size="default" color="dark" mode="md" (click)="pushPage('/troca-senha')">Consultar laboratórios</ion-button>
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card">
+      <div class="col-sm-6 d-flex align-items-stretch">
+        <div class="card h-100 w-100">
+          <i class="fas fa-user-friends text-center" style="font-size: 400%;"></i>
           <div class="card-body">
-            <h5 class="card-title">Setores</h5>
             <p class="card-text">Clique para mais informações sobre os setores.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <ion-button expand="block" fill="solid" size="default" color="dark" mode="md"
+              (click)="pushPage('/troca-senha')">Setores</ion-button>
           </div>
         </div>
       </div>

@@ -1,10 +1,18 @@
+import { PopoverPage } from './../pages/popover/popover.page';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController, ModalController, PopoverController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+
 import { HomePage } from './home.page';
+
+
+
+
+
 
 @NgModule({
   imports: [
@@ -20,4 +28,13 @@ import { HomePage } from './home.page';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule {
+
+  constructor(){
+
+
+  }
+
+
+
+}
