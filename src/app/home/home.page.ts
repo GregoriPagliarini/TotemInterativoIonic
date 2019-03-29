@@ -11,7 +11,7 @@ import { NavController, ModalController, PopoverController } from '@ionic/angula
 export class HomePage {
 
   constructor(private nav: NavController, 
-              private modalController: ModalController, 
+              private modalmatriculaController: ModalController, 
               private popoverController: PopoverController){
     
   }
