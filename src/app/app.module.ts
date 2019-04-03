@@ -1,5 +1,3 @@
-import { ModalPageModule } from './pages/modal/modal.module';
-import { ModalPage } from './pages/modal/modal.page';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -11,12 +9,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PopoverPageModule } from './pages/popover/popover.module';
+import { ModalMatriculaPageModule } from './pages/modal-matricula/modal-matricula.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-  ModalPageModule,PopoverPageModule
+  ModalMatriculaPageModule,PopoverPageModule
   ],
   providers: [
     StatusBar,

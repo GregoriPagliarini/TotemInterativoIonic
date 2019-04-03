@@ -1,30 +1,46 @@
 <ion-header>
-  <ion-toolbar class="display-3 text-center ">
-    <ion-back-button defaultHref="/">
-      <ion-title>Trocar senha</ion-title>
-    </ion-back-button>
-  </ion-toolbar>
+    <ion-toolbar class="">
+        <div class="row">
+            <div class="col-md-2 display-3 text-center">
+                <div style="width: 8px;">
+                    <ion-back-button defaultHref="/"></ion-back-button>
+                </div>
+            </div>
+            <div class="col-md-8 display-3 text-center">
+                Trocar senha
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
-  <div style="margin: 3%">
-    <div class="row">
-      <div class='col-md-6 offset-sm-3 text-center'>
-        <p class='text-center'>Digite sua matrícula</p>
-        <div class="input-group text-center">
-          <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-          <div class="input-group-append ">
-            <button type="button" class="btn btn-outline-secondary">Enviar</button>
-          </div>
+    <div style="margin: 3%;">
+        <p class="card-text caixa-texto text-center">Digite sua matrícula</p>
+        <div class="row">
+            <div class="col-md-3 offset-sm-3 text-center">
+
+            </div>
+            <div class="col-md-6 offset-sm-3 text-center">
+                <input type="text" class="form-control" aria-label="">
+                <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 text-center"
+                    style="margin:15px;" (click)="openModalMatricula()">Esqueceu sua matrícula?</ion-button>
+            </div>
+            <div class="col-md-3 text-center">
+      <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0" (click)="openDetails()">Enviar</ion-button>
+               
+            </div>
         </div>
-        <div>
-          
-          <p>
-            Esqueceu sua matrícula?
-          </p>
+
+        <div *ngIf="(retornoObservable | async) as retorno" >
+            <div>{{retorno.args.nome}}</div>
+            <div>{{retorno.args.sobrenome}}</div>
         </div>
-      </div>
+
     </div>
-  </div>
+
 
 </ion-content>
