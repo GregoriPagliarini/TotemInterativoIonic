@@ -29,7 +29,7 @@
     "core-js": "^2.5.4",
     "ionic-tooltips": "^3.1.0",
     "ng2-bootstrap": "^1.6.3",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.3.3",
     "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.29"
   },

@@ -4,8 +4,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController, ModalController, PopoverController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs';
-import { Pessoa} from '/shared/classe.matricula';
+import { Subscription, of } from 'rxjs';
+import {switchMap } from 'rxjs/operators';
+import { Pessoa } from '../../shared/classe.matricula';
 
 
 @Component({
@@ -21,7 +22,11 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
       
   }
   openDetails() {
-    this.retornoObservable = this.httpClient.get('https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&matricula=5200192');
+    this.retornoObservable = this.httpClient.get<any>('https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&matricula=5200192').pipe(
+      switchMap((retorno: any) => {
+        return of(new Pessoa(retorno.args.nome, retorno.args.sobrenome, retorno.args.matricula));
+      })
+    );
   }
 
   async openModalMatricula() {

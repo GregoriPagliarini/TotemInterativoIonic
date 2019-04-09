@@ -2,6 +2,7 @@ import * as tslib_1 from "tslib";
 import { ModalMatriculaPage } from './../modal-matricula/modal-matricula.page';
 import { Component } from '@angular/core';
 import { NavController, ModalController, PopoverController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 var TrocaSenhaPage = /** @class */ (function () {
     function TrocaSenhaPage(nav, modalmatriculaController, popoverController, httpClient) {
         this.nav = nav;
@@ -9,6 +10,9 @@ var TrocaSenhaPage = /** @class */ (function () {
         this.popoverController = popoverController;
         this.httpClient = httpClient;
     }
+    TrocaSenhaPage.prototype.openDetails = function () {
+        this.retornoObservable = this.httpClient.get('https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&matricula=5200192');
+    };
     TrocaSenhaPage.prototype.openModalMatricula = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var modal;
@@ -27,14 +31,16 @@ var TrocaSenhaPage = /** @class */ (function () {
     };
     TrocaSenhaPage.prototype.ngOnInit = function () {
     };
-    var _a;
+    TrocaSenhaPage.prototype.ngOnDestroy = function () {
+    };
     TrocaSenhaPage = tslib_1.__decorate([
         Component({
             selector: 'app-troca-senha',
             templateUrl: './troca-senha.page.html',
             styleUrls: ['./troca-senha.page.scss'],
         }),
-        tslib_1.__metadata("design:paramtypes", [NavController, ModalController, PopoverController, typeof (_a = typeof HttpClient !== "undefined" && HttpClient) === "function" ? _a : Object])
+        tslib_1.__metadata("design:paramtypes", [NavController, ModalController, PopoverController,
+            HttpClient])
     ], TrocaSenhaPage);
     return TrocaSenhaPage;
 }());
