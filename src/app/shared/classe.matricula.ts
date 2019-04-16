@@ -1,5 +1,13 @@
 export class Pessoa {
-    constructor(public nome: string, 
-                public sobrenome: string, 
-                public matricula: number){}
+
+    nome: string;
+    sobrenome: string;
+    matricula: number;
+
+    constructor( nome: string, sobrenome: string, matricula: number){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.matricula = matricula;
+    }
+
  }

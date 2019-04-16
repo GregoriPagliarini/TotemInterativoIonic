@@ -25,19 +25,24 @@
 
             </div>
             <div class="col-md-6 offset-sm-3 text-center">
-                <input type="text" class="form-control" aria-label="">
+                <input type="text" class="form-control" aria-label="" (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
                 <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 text-center"
-                    style="margin:15px;" (click)="openModalMatricula()">Esqueceu sua matrícula?</ion-button>
+                    style="margin:15px;" (click)="openModalMatricula()">Não sabe sua matrícula?</ion-button>
             </div>
             <div class="col-md-3 text-center">
-      <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0" (click)="openDetails()">Enviar</ion-button>
-               
+                <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0"
+                    (click)="getMatricula()">Enviar</ion-button>
+
             </div>
         </div>
 
-        <div *ngIf="(retornoObservable | async) as gregori" >
-            <div>{{gregori.nome}}</div>
+        <div *ngIf="(pessoa$ | async) as retorno">
+            <div>{{retorno.matricula}}</div>
             <div></div>
+        </div>
+
+        <div *ngIf="erroMatricula">
+            Você não informou matrícula.
         </div>
 
     </div>
