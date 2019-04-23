@@ -19,7 +19,7 @@ export class HomePage {
   
   pushPage(){
 
-    this.nav.navigateForward('/troca-senha/')
+    this.nav.navigateForward('/tela-escolha/');
   
   }
   
