@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalMatriculaPage } from './modal-matricula.page';
+import { ModalTestePage } from './modal-teste.page';
 
-describe('ModalMatriculaPage', () => {
-  let component: ModalMatriculaPage;
-  let fixture: ComponentFixture<ModalMatriculaPage>;
+describe('ModalTestePage', () => {
+  let component: ModalTestePage;
+  let fixture: ComponentFixture<ModalTestePage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalMatriculaPage ],
+      declarations: [ ModalTestePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalMatriculaPage);
+    fixture = TestBed.createComponent(ModalTestePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

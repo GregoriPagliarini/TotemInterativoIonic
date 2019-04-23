@@ -7,6 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 import { TrocaSenhaPage } from './troca-senha.page';
+import { ModalTestePage } from '../modal-teste/modal-teste.page';
+
+
+
 
 const routes: Routes = [
   {
@@ -23,6 +27,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule,
   ],
-  declarations: [TrocaSenhaPage]
+  declarations: [TrocaSenhaPage, ModalTestePage],
+  entryComponents: [ModalTestePage],
+  exports: [TrocaSenhaPage]
 })
 export class TrocaSenhaPageModule {}

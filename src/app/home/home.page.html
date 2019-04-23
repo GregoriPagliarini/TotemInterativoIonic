@@ -1,68 +1,90 @@
 <ion-header>
-  <ion-toolbar class="display-3 text-center">
-    Posso te ajudar?
+  <ion-toolbar class="ion-text-center">
+    <h1 class="m-0"> Posso te ajudar? </h1>
   </ion-toolbar>
-  
 </ion-header>
 
-
-
-
 <ion-content>
-  <div style='margin: 8px;'>
-    <!-- Linha 01 -->
-    <div class="row">
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">
-          <i class="fas fa-key  text-center" style="font-size: 400%;"></i>
-          <div class="card-body ">
-            <p class="card-text caixa-texto text-center">Clique para trocar a senha de login do wi-fi/acesso aos computadores nos
-              laboratórios.</p>
-            <ion-button expand="block" fill="solid" size="default" mode="md" (click)="pushPage('/troca-senha')"
-              class="cor-if-verde">Trocar senha</ion-button>
-          </div>
-        </div>
-      </div>
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col size="6">
+        <ion-card style="height: 250px">
+          <ion-card-header>
+            <ion-card-subtitle>
+              <i class="fas fa-key" style="font-size: 400%;"></i>
+            </ion-card-subtitle>
+            <ion-card-title style="height: 80px;" class="ion-text-center">
+              Clique para trocar a senha de login do wi-fi/acesso aos computadores nos
+              laboratórios.
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button routerLink="/troca-senha" expand="block" fill="solid" size="default" mode="md"
+              class="cor-if-verde">Trocar senha
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
 
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">
-          <i class="fas fa-clock text-center" style="font-size: 400%;"></i>
-          <div class="card-body">
-            <p class="card-text caixa-texto text-center">Clique para visualizar os horários de suas aulas.</p>
-            <ion-button expand="block" fill="solid" size="default" mode="md" (click)="pushPage('/troca-senha')"
-              class="cor-if-verde">Horário das aulas</ion-button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Linha 02 -->
-    <div class="row">
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">
-          <i class="fas fa-calendar-alt text-center" style="font-size: 400%;"></i>
-          <div class="card-body">
-            <p class="card-text caixa-texto text-center">Clique para consultar os laboratórios e suas respectivas aulas.</p>
-            <ion-button expand="block" fill="solid" size="default" mode="md" (click)="pushPage('/troca-senha')"
-              class="cor-if-verde">Consultar laboratórios</ion-button>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">
-          <i class="fas fa-user-friends text-center" style="font-size: 400%;"></i>
-          <div class="card-body">
-            <p class="card-text caixa-texto text-center">Clique para mais informações sobre os setores.</p>
-            <ion-button expand="block" fill="solid" size="default" mode="md" (click)="pushPage('/troca-senha')"
-              class="cor-if-verde">Setores</ion-button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      <ion-col>
+        <ion-card style="height: 250px">
+          <ion-card-header>
+            <ion-card-subtitle>
+              <i class="fas fa-clock " style="font-size: 400%;"></i>
+            </ion-card-subtitle>
+            <ion-card-title style="height: 80px" class="ion-text-center">
+              Clique para visualizar os horários de suas aulas.
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Horário das aulas
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-text-center">
+      <ion-col size="6">
+        <ion-card style="height: 250px">
+          <ion-card-header>
+            <ion-card-subtitle>
+              <i class="fas fa-calendar-alt" style="font-size: 400%;"></i>
+            </ion-card-subtitle>
+            <ion-card-title style="height: 80px" class="ion-text-center">
+              Clique para consultar os laboratórios e suas respectivas aulas.
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Consultar laboratórios
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card style="height: 250px">
+          <ion-card-header>
+            <ion-card-subtitle>
+              <i class="fas fa-user-friends" style="font-size: 400%;"></i>
+            </ion-card-subtitle>
+            <ion-card-title style="height: 80px" class="ion-text-center">
+              Clique para mais informações sobre os setores.
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Setores
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
-
 <ion-footer>
-    <p class="tamanho-texto font-weight-bolder text-center"> By: Arthur Bassotto Ziero, Gregori Pagliarini Longhi, Samuel Balbinot, Vitor Ribeiro Queiroz em parceria
-      com o setor de DTI do Campus Farroupilha</p>
+  <p class="tamanho-texto ion-text-center">Desenvolvimento: Arthur Bassotto Ziero, Gregori Pagliarini Longhi, Samuel
+    Balbinot, Vitor Ribeiro Queiroz
+    <br>
+    juntamente com DTI do Campus Farroupilha</p>
 </ion-footer>

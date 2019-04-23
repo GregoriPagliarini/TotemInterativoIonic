@@ -7,7 +7,6 @@ import { NavController, ModalController, PopoverController } from '@ionic/angula
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-
 export class HomePage {
 
   constructor(private nav: NavController, 
@@ -15,15 +14,4 @@ export class HomePage {
               private popoverController: PopoverController){
     
   }
-
-  
-  pushPage(){
-
-    this.nav.navigateForward('/troca-senha/')
-  
-  }
-  
-  
-
-
 }

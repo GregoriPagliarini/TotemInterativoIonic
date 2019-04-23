@@ -1,12 +1,14 @@
-import { ModalMatriculaPage } from './../modal-matricula/modal-matricula.page';
-import { HomePage } from './../../home/home.page';
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavController, ModalController, PopoverController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Subscription, of } from 'rxjs';
-import { switchMap, concat } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Pessoa } from '../../shared/classe.matricula';
+import { ModalTestePage } from '../modal-teste/modal-teste.page';
+
+
 
 
 @Component({
@@ -21,19 +23,20 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
   pessoa$: Observable<Pessoa>;
   constructor(private nav: NavController,
     private modalmatriculaController: ModalController,
-    private popoverController: PopoverController,
-    public httpClient: HttpClient) {}
+    public httpClient: HttpClient
+  ) { }
 
   getMatricula() {
     if (this.matricula) {
       this.erroMatricula = false;
-      const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&matricula='+this.matricula;
+      const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&cpf=12345678900&matricula=' + this.matricula;
       this.pessoa$ = this.httpClient.get<any>(url).pipe(
         switchMap((retorno: any) => {
           console.log(url);
-          return of(new Pessoa(retorno.args.nome, 
-                              retorno.args.sobrenome, 
-                              retorno.args.matricula));
+          return of(new Pessoa(retorno.args.nome,
+            retorno.args.sobrenome,
+            retorno.args.matricula,
+            retorno.args.cpf));
         })
       );
     } else {
@@ -45,11 +48,18 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
     this.erroMatricula = this.matricula.length == 0;
   }
 
+
   async openModalMatricula() {
-    
+    const modal = await this.modalmatriculaController.create({
+      component: ModalTestePage,
+      componentProps: {
+      }
+    });
+    return await modal.present();
   }
 
   ngOnInit() {
+
   }
 
   ngOnDestroy() {
