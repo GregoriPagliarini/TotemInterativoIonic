@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PopoverPageModule } from './pages/popover/popover.module';
 import { ModalTestePageModule } from './pages/modal-teste/modal-teste.module';
+import { BaseService } from './base.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { ModalTestePageModule } from './pages/modal-teste/modal-teste.module';
   providers: [
     StatusBar,
     SplashScreen,
+    BaseService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

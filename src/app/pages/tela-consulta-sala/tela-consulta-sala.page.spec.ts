@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TelaConsultaSalvaPage } from './tela-consulta-salva.page';
+import { TelaConsultaSalaPage } from './tela-consulta-sala.page';
 
-describe('TelaConsultaSalvaPage', () => {
-  let component: TelaConsultaSalvaPage;
-  let fixture: ComponentFixture<TelaConsultaSalvaPage>;
+describe('TelaConsultaSalaPage', () => {
+  let component: TelaConsultaSalaPage;
+  let fixture: ComponentFixture<TelaConsultaSalaPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TelaConsultaSalvaPage ],
+      declarations: [ TelaConsultaSalaPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TelaConsultaSalvaPage);
+    fixture = TestBed.createComponent(TelaConsultaSalaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

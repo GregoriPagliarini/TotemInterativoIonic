@@ -1,64 +1,40 @@
-<ion-header>
-    <ion-toolbar>
-        <div class="h-100">
-            <div class="display-wrap display-flex h-100">
-                <div class=" w-100">
-                    <ion-row>
-                        <ion-col size="4">
-                            <div>
-                                <ion-back-button defaultHref="/"></ion-back-button>
-                            </div>
-                        </ion-col>
-                        <ion-col size="4">
-                            <div class="alinha-centro">
-                                <h1 class="m-0">Trocar senha</h1>
-                            </div>
-                        </ion-col>
-                    </ion-row>
-                </div>
-            </div>
+<div class="h-100">
+    <div class="display-wrap display-flex h-100">
+        <div class=" alinha-topo w-100">
+            <ion-row>
+                <ion-col>
+                    <h1 class="card-text caixa-texto">Digite sua matrícula</h1>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3">
+                    <input type="text" class="form-control w-100 h-100 tamanho-texto-caixa-de-texto" aria-label=""
+                        (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
+                </ion-col>
+            </ion-row>
         </div>
-    </ion-toolbar>
-</ion-header>
-
-
-<ion-content>
-    <div class="h-100">
-        <div class="display-wrap display-flex h-100">
-            <div class=" alinha-topo w-100">
-                <h1 class="card-text caixa-texto">Digite sua matrícula</h1>
-            </div>
-            <div class="alinha-topo w-100">
-                <ion-row>
-                    <ion-col>
-                        <input type="text" class="form-control w-100 h-100" aria-label="" (keyup)="digitando()"
-                            name="matricula" [(ngModel)]="matricula">
-                    </ion-col>
-                    <ion-col size="3">
-                        <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0"
-                            (click)="getPesquisaMatricula()">Enviar</ion-button>
-                    </ion-col>
-                </ion-row>
-            </div>
-            <div class="alinha-topo w-100">
-                <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 m-15p"
-                    (click)="openModalMatricula()">Não sabe sua matrícula?</ion-button>
-            </div>
-            <div *ngIf="(pessoa$ | async) as retorno">
-                <div>{{retorno.matricula}}</div>
-                <div></div>
-            </div>
-
-            <div *ngIf="erroMatricula">
-                Você não informou matrícula.
-            </div>
+        <div class="alinha-topo w-100">
+            <ion-row>
+                <ion-col>
+                    <input type="text" class="form-control w-100 h-100 tamanho-texto-caixa-de-texto" aria-label=""
+                        (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
+                    <div *ngIf="erroMatricula" class="alinha-centro">
+                        <font color="red"> Você não informou matrícula.</font>
+                    </div>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0"
+                        (click)="getPesquisaMatricula()" routerLink="/tela-escolha">Enviar</ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+        <div class="alinha-topo w-100">
+            <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 m-15p"
+                (click)="openModalMatricula()">Não sabe sua matrícula?</ion-button>
+        </div>
+        <div *ngIf="(pessoa$ | async) as retorno">
+            <div>{{retorno.matricula}}</div>
+            <div></div>
         </div>
     </div>
-</ion-content>
-
-<ion-footer>
-    <p class="tamanho-texto ion-text-center">
-        Desenvolvimento: Arthur Bassotto Ziero, Gregori Pagliarini Longhi, Samuel Balbinot, Vitor Ribeiro Queiroz
-        <br>
-        juntamente com DTI do Campus Farroupilha</p>
-</ion-footer>
+</div>

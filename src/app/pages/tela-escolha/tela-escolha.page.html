@@ -1,70 +1,62 @@
-<ion-header>
-  <ion-toolbar class="">
-      <div class="row">
-          <div class="col-md-2 display-3 text-center">
-              <div style="width: 8px;">
-                  <ion-back-button defaultHref="/"></ion-back-button>
-              </div>
-          </div>
-          <div class="col-md-8 display-3 text-center">
-              Escolha o seu CPF              
-          </div>
-          <div class="col-md-2">
-          </div>
-      </div>
-  </ion-toolbar>
-</ion-header>
+<ion-grid class="w-100">
+  <ion-row class="ion-text-center">
+    <ion-col size="6">
+      <ion-card style="height: 250px">
+        <ion-card-header>
+          <ion-card-title style="height: 80px;" class="ion-text-center">
+            CPF1
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button routerLink="/tela-escolha2" expand="block" fill="solid" size="default" mode="md"
+            class="cor-if-verde">Enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
 
+    <ion-col>
+      <ion-card style="height: 250px">
+        <ion-card-header>
+          <ion-card-title style="height: 80px" class="ion-text-center">
+            CPF2
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
+  <ion-row class="ion-text-center">
+    <ion-col size="6">
+      <ion-card style="height: 250px">
+        <ion-card-header>
+          <ion-card-title style="height: 80px" class="ion-text-center">
+            CPF3
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
 
-
-<ion-content>
-  <div style='margin: 8px;'>
-    <!-- Linha 01 -->
-    <div class="row">
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">          
-          <div class="card-body ">
-            <p class="card-text caixa-texto text-center">CPF 1</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">          
-          <div class="card-body">
-            <p class="card-text caixa-texto text-center">CPF 2</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Linha 02 -->
-    <div class="row">
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">          
-          <div class="card-body">
-            <p class="card-text caixa-texto text-center">CPF 3</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 d-flex align-items-stretch">
-        <div class="card h-100 w-100">          
-          <div class="card-body">
-            <p class="card-text caixa-texto text-center">CPF 4</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 text-center"
-                    style="margin:15px;" href="/">Cancelar</ion-button>
-    <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 text-center"
-                    style="margin:15px;" href="/">Enviar</ion-button>
-  </div>
-</ion-content>
-
-
-<ion-footer>
-  <p class="tamanho-texto font-weight-bolder text-center"> By: Arthur Bassotto Ziero, Gregori Pagliarini Longhi, Samuel Balbinot, Vitor Ribeiro Queiroz em parceria
-    com o setor de DTI do Campus Farroupilha</p>
-</ion-footer>
+    <ion-col>
+      <ion-card style="height: 250px">
+        <ion-card-header>
+          <ion-card-title style="height: 80px" class="ion-text-center">
+            CPF4
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

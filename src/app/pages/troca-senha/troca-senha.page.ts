@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Pessoa } from '../../shared/classe.matricula';
 import { ModalTestePage } from '../modal-teste/modal-teste.page';
+import { BaseService } from 'src/app/base.service';
 
 
 
@@ -23,10 +24,11 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
   pessoa$: Observable<Pessoa>;
   constructor(private nav: NavController,
     private modalmatriculaController: ModalController,
+    private baseService: BaseService,
     public httpClient: HttpClient
   ) { }
 
-  getMatricula() {
+  getPesquisaMatricula() {
     if (this.matricula) {
       this.erroMatricula = false;
       const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&cpf=12345678900&matricula=' + this.matricula;
@@ -34,9 +36,9 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
         switchMap((retorno: any) => {
           console.log(url);
           return of(new Pessoa(retorno.args.nome,
-            retorno.args.sobrenome,
-            retorno.args.matricula,
-            retorno.args.cpf));
+                               retorno.args.sobrenome,
+                               retorno.args.matricula,
+                               retorno.args.cpf));
         })
       );
     } else {
@@ -59,7 +61,7 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    this.baseService.headerTitle = 'Trocar Senha';
   }
 
   ngOnDestroy() {

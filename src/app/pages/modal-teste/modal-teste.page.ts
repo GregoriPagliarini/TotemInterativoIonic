@@ -25,10 +25,9 @@ export class ModalTestePage implements OnInit {
       const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&cpf='+ this.cpf +'&matricula=5200192';
       this.pessoa$ = this.httpClient.get<any>(url).pipe(
         switchMap((retorno: any) => {
-          console.log(url);
-          return of(new Pessoa(retorno.args.matricula,
-                               retorno.args.nome,
+          return of(new Pessoa(retorno.args.nome,
                                retorno.args.sobrenome,
+                               retorno.args.matricula,
                                retorno.args.cpf));
         })
       );
