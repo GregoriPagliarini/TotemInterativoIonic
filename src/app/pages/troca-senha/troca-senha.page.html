@@ -10,6 +10,9 @@
                 <ion-col size="3">
                     <input type="text" class="form-control w-100 h-100 tamanho-texto-caixa-de-texto" aria-label=""
                         (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
+                    <div *ngIf="erroMatricula" class="alinha-centro">
+                        <font color="red"> Você não informou matrícula.</font>
+                    </div>
                 </ion-col>
             </ion-row>
         </div>

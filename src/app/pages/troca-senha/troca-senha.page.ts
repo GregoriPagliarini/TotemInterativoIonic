@@ -30,7 +30,6 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
 
   getPesquisaMatricula() {
     if (this.matricula) {
-      this.erroMatricula = false;
       const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&cpf=12345678900&matricula=' + this.matricula;
       this.pessoa$ = this.httpClient.get<any>(url).pipe(
         switchMap((retorno: any) => {
