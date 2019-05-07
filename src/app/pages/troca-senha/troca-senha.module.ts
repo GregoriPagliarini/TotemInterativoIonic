@@ -4,13 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { IonicModule } from '@ionic/angular';
 import { TrocaSenhaPage } from './troca-senha.page';
 import { ModalTestePage } from '../modal-teste/modal-teste.page';
-
-
-
 
 const routes: Routes = [
   {
