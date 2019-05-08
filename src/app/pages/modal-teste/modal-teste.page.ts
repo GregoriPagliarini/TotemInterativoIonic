@@ -24,12 +24,7 @@ export class ModalTestePage implements OnInit {
       this.erroCpf = false;
       const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&cpf='+ this.cpf +'&matricula=5200192';
       this.pessoa$ = this.httpClient.get<any>(url).pipe(
-        switchMap((retorno: any) => {
-          return of(new Pessoa(retorno.args.nome,
-                               retorno.args.sobrenome,
-                               retorno.args.matricula,
-                               retorno.args.cpf));
-        })
+     
       );
     } else {
       this.erroCpf = true;

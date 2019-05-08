@@ -6,14 +6,20 @@
         <div class="alinha-topo w-100">
             <ion-row>
                 <ion-col>
-                    <input autocomplete="off" type="text" class="form-control w-100  tamanho-texto-caixa-de-texto caixa-texto" aria-label=""
+                    <input autocomplete="off" type="text"
+                        class="form-control w-100  tamanho-texto-caixa-de-texto caixa-texto" aria-label=""
                         (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
                     <div>
-                        <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 alinha-centro"
-                            (click)="getPesquisaMatricula()" routerLink="/tela-escolha">Enviar</ion-button>
+                        <ion-button expand="" fill="solid" size="default" mode="md"
+                            class="cor-if-verde mt-0 mb-0 alinha-centro" (click)="getPesquisaMatricula()">Enviar
+                        </ion-button>
                     </div>
                     <div *ngIf="erroMatricula" class="alinha-centro">
                         <font color="red"> Você não informou matrícula.</font>
+                    </div>
+                    <div *ngIf="(pessoa$ | async) as retorno">
+                        <div>{{retorno.nome}}</div>
+                        <div></div>
                     </div>
                 </ion-col>
             </ion-row>
@@ -21,10 +27,6 @@
         <div class="alinha-topo w-100">
             <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 m-15p"
                 (click)="openModalMatricula()">Não sabe sua matrícula?</ion-button>
-        </div>
-        <div *ngIf="(pessoa$ | async) as retorno">
-            <div>{{retorno.matricula}}</div>
-            <div></div>
         </div>
     </div>
 </div>
