@@ -1,28 +1,28 @@
-<ion-header>
-  <ion-toolbar class="display-3 text-center ">
-    <ion-back-button defaultHref="/">
-      <ion-title>Trocar senha</ion-title>
-    </ion-back-button>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div style="margin: 3%">
-    <div class="row">
-      <div class='col-md-6 offset-sm-3 text-center'>
-        <p class='text-center'>Digite sua matrícula</p>
-        <div class="input-group text-center">
-          <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-          <div class="input-group-append ">
-            <button type="button" class="btn btn-outline-secondary">Enviar</button>
-          </div>
+<div class="h-100">
+    <div class="display-wrap display-flex h-100">
+        <div class=" alinha-topo w-100">
+            <h1 class="card-text caixa-texto">Digite sua matrícula</h1>
         </div>
-        <div>
-          <p>
-            Esqueceu sua matrícula?
-          </p>
+        <div class="alinha-topo w-100">
+            <ion-row>
+                <ion-col>
+                    <input autocomplete="off" type="text"
+                        class="form-control w-100  tamanho-texto-caixa-de-texto caixa-texto" aria-label=""
+                        (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
+                    <div>
+                        <ion-button expand="" fill="solid" size="default" mode="md"
+                            class="cor-if-verde mt-0 mb-0 alinha-centro" (click)="getPesquisaMatricula()">Enviar
+                        </ion-button>
+                    </div>
+                    <div *ngIf="mensagemErroMatricula" class="alinha-centro">
+                        <font color="red"> {{ mensagemErroMatricula }}</font>
+                    </div>
+                </ion-col>
+            </ion-row>
         </div>
-      </div>
+        <div class="alinha-topo w-100">
+            <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 m-15p"
+                (click)="openModalMatricula()">Não sabe sua matrícula?</ion-button>
+        </div>
     </div>
-  </div>
-</ion-content>
+</div>

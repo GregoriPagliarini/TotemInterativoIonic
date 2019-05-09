@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <div>
+      <div>
+        <div class="w-8">
+        </div>
+      </div>
+      <div class="ion-text-center">
+        <h1>Pesquisar matricula</h1>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="h-100">
+    <div class="display-wrap display-flex h-100">
+      <div class=" alinha-topo w-100">
+        <h1 class="card-text caixa-texto ">Digite seu CPF</h1>
+      </div>
+      <div class="alinha-topo w-100">
+        <ion-row>
+          <ion-col>
+            <div>
+              <input type="text" class="form-control w-100 tamanho-texto-caixa-de-texto caixa-texto" [(ngModel)]="cpf" aria-label="CPF">
+            </div>
+            <div>
+              <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 alinha-centro"
+                (click)="getMatricula()">Enviar</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="alinha-base w-100">
+        <ion-row>
+          <ion-col>
+              <div *ngIf="(pessoa$ | async) as retorno">
+                  <div>{{retorno.matricula}}</div>
+                  <div></div>
+                </div>
+                <div *ngIf="erroCpf">
+                    <font color="red">  Você não informou o CPF. </font>
+                </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

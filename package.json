@@ -29,7 +29,8 @@
     "core-js": "^2.5.4",
     "ionic-tooltips": "^3.1.0",
     "ng2-bootstrap": "^1.6.3",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
@@ -37,7 +38,7 @@
     "@angular-devkit/build-angular": "~0.13.0",
     "@angular-devkit/core": "~7.2.3",
     "@angular-devkit/schematics": "~7.2.3",
-    "@angular/cli": "~7.3.1",
+    "@angular/cli": "7.3.8",
     "@angular/compiler": "~7.2.2",
     "@angular/compiler-cli": "~7.2.2",
     "@angular/language-service": "~7.2.2",
