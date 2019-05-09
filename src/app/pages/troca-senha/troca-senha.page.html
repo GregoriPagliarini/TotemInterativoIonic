@@ -14,12 +14,8 @@
                             class="cor-if-verde mt-0 mb-0 alinha-centro" (click)="getPesquisaMatricula()">Enviar
                         </ion-button>
                     </div>
-                    <div *ngIf="erroMatricula" class="alinha-centro">
-                        <font color="red"> Você não informou matrícula.</font>
-                    </div>
-                    <div *ngIf="(pessoa$ | async) as retorno">
-                        <div>{{retorno.nome}}</div>
-                        <div></div>
+                    <div *ngIf="mensagemErroMatricula" class="alinha-centro">
+                        <font color="red"> {{ mensagemErroMatricula }}</font>
                     </div>
                 </ion-col>
             </ion-row>

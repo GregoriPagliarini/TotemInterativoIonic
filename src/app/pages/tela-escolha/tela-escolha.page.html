@@ -1,62 +1,20 @@
 <ion-grid class="w-100">
   <ion-row class="ion-text-center">
-    <ion-col size="6">
+    
+    <ion-col *ngFor="let cpf of cpfs | async" size="6">
       <ion-card style="height: 250px">
         <ion-card-header>
           <ion-card-title style="height: 80px;" class="ion-text-center">
-            CPF1
+            {{cpf.cpf}}
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <ion-button routerLink="/tela-escolha2" expand="block" fill="solid" size="default" mode="md"
+          <ion-button (click)="clicouCPF(cpf.cpf)" expand="block" fill="solid" size="default" mode="md"
             class="cor-if-verde">Enviar
           </ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>
 
-    <ion-col>
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-title style="height: 80px" class="ion-text-center">
-            CPF2
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="ion-text-center">
-    <ion-col size="6">
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-title style="height: 80px" class="ion-text-center">
-            CPF3
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-
-    <ion-col>
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-title style="height: 80px" class="ion-text-center">
-            CPF4
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
   </ion-row>
 </ion-grid>

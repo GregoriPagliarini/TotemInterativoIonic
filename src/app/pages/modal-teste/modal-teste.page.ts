@@ -22,9 +22,23 @@ export class ModalTestePage implements OnInit {
   getMatricula() {
     if (this.cpf) {
       this.erroCpf = false;
-      const url = 'https://httpbin.org/get?encontrou=true&nome=Eduardo&sobrenome=Balbinot&cpf='+ this.cpf +'&matricula=5200192';
-      this.pessoa$ = this.httpClient.get<any>(url).pipe(
-     
+      const url = 'http://127.0.0.1:8000/tablet/consulta/';
+      this.pessoa$ = this.httpClient.post<any>(url, { "dado": this.cpf, }).pipe(
+        switchMap((retorno: any) => {
+          let pessoas = retorno.pessoas;
+          if (pessoas.length > 1) {
+            console.log("teste");
+          } else {
+            let pessoaDict = pessoas[0];
+            let pessoa = new Pessoa(pessoaDict.pk,
+              pessoaDict.nome,
+              pessoaDict.sobrenome,
+              pessoaDict.matricula,
+              pessoaDict.cpf)
+            console.log(pessoa);
+            return of(pessoa);
+          }
+        }),
       );
     } else {
       this.erroCpf = true;
