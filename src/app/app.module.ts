@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PopoverPageModule } from './pages/popover/popover.module';
-import { ModalTestePageModule } from './pages/modal-teste/modal-teste.module';
+import { ModalMatriculaPageModule } from './pages/modal-matricula/modal-matricula.module';
 import { BaseService } from './base.service';
 
 @NgModule({

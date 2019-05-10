@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of, EMPTY } from 'rxjs';
 import { switchMap, catchError, map } from 'rxjs/operators';
 import { Pessoa } from '../../shared/classe.matricula';
-import { ModalTestePage } from '../modal-teste/modal-teste.page';
+import { ModalMatriculaPage } from '../modal-matricula/modal-matricula.page';
 import { BaseService } from 'src/app/base.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { BaseService } from 'src/app/base.service';
   styleUrls: ['./troca-senha.page.scss'],
 
 })
-export class TrocaSenhaPage implements OnInit, OnDestroy {
+export class TrocaSenhaPage implements OnInit{
 
   ERRO_GERAL_MATRICULA = 'Você não informou matrícula.';
   ERRO_MATRICULA_INVALIDA = 'Matrícula inválida.'
@@ -63,7 +63,7 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
 
   async openModalMatricula() {
     const modal = await this.modalmatriculaController.create({
-      component: ModalTestePage,
+      component: ModalMatriculaPage,
       componentProps: {
       }
     });
@@ -72,10 +72,6 @@ export class TrocaSenhaPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.baseService.headerTitle = 'Trocar Senha';
-  }
-
-  ngOnDestroy() {
-
   }
 
 }
