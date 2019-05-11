@@ -14,11 +14,11 @@ import { BaseService } from 'src/app/base.service';
   styleUrls: ['./troca-senha.page.scss'],
 
 })
-export class TrocaSenhaPage implements OnInit{
+export class TrocaSenhaPage implements OnInit {
 
   ERRO_GERAL_MATRICULA = 'Você não informou matrícula.';
-  ERRO_MATRICULA_INVALIDA = 'Matrícula inválida.'
-  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas.'
+  ERRO_MATRICULA_INVALIDA = 'Matrícula inválida.';
+  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas.';
 
   mensagemErroMatricula = null;
   matricula: string;
@@ -32,20 +32,20 @@ export class TrocaSenhaPage implements OnInit{
   getPesquisaMatricula() {
     if (this.matricula) {
       const url = 'http://127.0.0.1:8000/tablet/consulta/';
-      this.httpClient.post<any>(url, { "dado": this.matricula, }).subscribe(
+      this.httpClient.post<any>(url, { 'dado': this.matricula, }).subscribe(
         (retorno: any) => {
-          let pessoas = retorno.pessoas;
+          const pessoas = retorno.pessoas;
           if (pessoas.length > 1) {
             this.mensagemErroMatricula = this.ERRO_MULTIPLAS_MATRICULAS;
           } else {
-            let pessoaDict = pessoas[0];
-            let pessoa = new Pessoa(pessoaDict.pk,
+            const pessoaDict = pessoas[0];
+            const pessoa = new Pessoa(pessoaDict.pk,
               pessoaDict.nome,
               pessoaDict.sobrenome,
               pessoaDict.matricula,
-              pessoaDict.cpf)
+              pessoaDict.cpf);
             this.baseService.pessoaSelecionada = pessoa;
-            this.nav.navigateForward("/tela-escolha");
+            this.nav.navigateForward('/tela-escolha');
           }
         },
         (error: any) => {
@@ -58,7 +58,7 @@ export class TrocaSenhaPage implements OnInit{
   }
 
   digitando() {
-    this.mensagemErroMatricula = this.matricula.length == 0 ? this.ERRO_GERAL_MATRICULA : null;
+    this.mensagemErroMatricula = this.matricula.length === 0 ? this.ERRO_GERAL_MATRICULA : null;
   }
 
   async openModalMatricula() {

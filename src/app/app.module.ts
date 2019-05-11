@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PopoverPageModule } from './pages/popover/popover.module';
 import { ModalMatriculaPageModule } from './pages/modal-matricula/modal-matricula.module';
 import { BaseService } from './base.service';
 
@@ -16,7 +15,6 @@ import { BaseService } from './base.service';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-  PopoverPageModule,
   ],
   providers: [
     StatusBar,

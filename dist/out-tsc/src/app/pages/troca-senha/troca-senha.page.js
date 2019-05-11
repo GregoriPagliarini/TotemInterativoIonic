@@ -1,13 +1,12 @@
 import * as tslib_1 from "tslib";
 import { ModalMatriculaPage } from './../modal-matricula/modal-matricula.page';
 import { Component } from '@angular/core';
-import { NavController, ModalController, PopoverController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 var TrocaSenhaPage = /** @class */ (function () {
-    function TrocaSenhaPage(nav, modalmatriculaController, popoverController, httpClient) {
+    function TrocaSenhaPage(nav, modalmatriculaController, httpClient) {
         this.nav = nav;
         this.modalmatriculaController = modalmatriculaController;
-        this.popoverController = popoverController;
         this.httpClient = httpClient;
     }
     TrocaSenhaPage.prototype.openDetails = function () {
@@ -39,7 +38,7 @@ var TrocaSenhaPage = /** @class */ (function () {
             templateUrl: './troca-senha.page.html',
             styleUrls: ['./troca-senha.page.scss'],
         }),
-        tslib_1.__metadata("design:paramtypes", [NavController, ModalController, PopoverController,
+        tslib_1.__metadata("design:paramtypes", [NavController, ModalController,
             HttpClient])
     ], TrocaSenhaPage);
     return TrocaSenhaPage;

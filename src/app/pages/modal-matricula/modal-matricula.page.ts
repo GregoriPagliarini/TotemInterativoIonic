@@ -16,8 +16,8 @@ import { BaseService } from 'src/app/base.service';
 export class ModalMatriculaPage implements OnInit, OnDestroy {
 
   ERRO_GERAL_CPF = 'Você não informou o CPF.';
-  ERRO_CPF_INVALIDA = 'CPF inválido.'
-  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas.'
+  ERRO_CPF_INVALIDA = 'CPF inválido.';
+  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas.';
 
   mensagemErroCpf = null;
   cpf: string;
@@ -29,25 +29,25 @@ export class ModalMatriculaPage implements OnInit, OnDestroy {
     private baseService: BaseService) { }
 
   getMatricula() {
-    
+
     if (this.cpf) {
-      
+
       const url = 'http://127.0.0.1:8000/tablet/consulta/';
-      this.httpClient.post<any>(url, { "dado": this.cpf, }).subscribe(
-        
+      this.httpClient.post<any>(url, { 'dado': this.cpf, }).subscribe(
+
         (retorno: any) => {
-          let pessoas = retorno.pessoas;
+          const pessoas = retorno.pessoas;
           if (pessoas.length > 1) {
             this.mensagemErroCpf = this.ERRO_MULTIPLAS_MATRICULAS;
           } else {
-            let pessoaDict = pessoas[0];
-            let pessoa = new Pessoa(pessoaDict.pk,
+            const pessoaDict = pessoas[0];
+            const pessoa = new Pessoa(pessoaDict.pk,
               pessoaDict.nome,
               pessoaDict.sobrenome,
               pessoaDict.matricula,
-              pessoaDict.cpf)
+              pessoaDict.cpf);
             this.baseService.pessoaSelecionada = pessoa;
-            this.nav.navigateForward("/tela-escolha2");
+            this.nav.navigateForward('/tela-escolha2');
           }
         },
         (error: any) => {
@@ -60,10 +60,10 @@ export class ModalMatriculaPage implements OnInit, OnDestroy {
   }
 
   digitando() {
-    this.mensagemErroCpf = this.cpf.length == 0 ? this.ERRO_GERAL_CPF : null;
+    this.mensagemErroCpf = this.cpf.length === 0 ? this.ERRO_GERAL_CPF : null;
   }
 
-  fechaModal(){
+  fechaModal() {
     this.modalmatriculaController.dismiss();
   }
 

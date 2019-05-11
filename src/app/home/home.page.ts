@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, PopoverController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { BaseService } from '../base.service';
 
 @Component({
@@ -10,10 +10,9 @@ import { BaseService } from '../base.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(private nav: NavController, 
-              private modalmatriculaController: ModalController, 
-              private popoverController: PopoverController,
-              private baseService: BaseService){
+  constructor(private nav: NavController,
+              private modalmatriculaController: ModalController,
+              private baseService: BaseService) {
   }
 
   ngOnInit() {

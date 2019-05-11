@@ -21,20 +21,24 @@ export class TelaEscolha2Page implements OnInit {
   ngOnInit() {
     console.log(this.baseService.pessoaSelecionada.nome);
     this.baseService.headerTitle = 'Escolha o seu nome';
-    const url = "http://127.0.0.1:8000/tablet/nomes/";
+    const url = 'http://127.0.0.1:8000/tablet/nomes/';
     this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
         this.nomes = of(retorno.pessoas);
       },
       (error: any) => {
-        this.nav.navigateForward("/home");
+        this.nav.navigateForward('/home');
       }
     );
   }
 
-  clicouNome(nome: string) {
-    console.log(nome);
-    this.nav.navigateForward("/home");
-  }
+  clicouNome(nomeExterno: NomeExterno) {
+    // tslint:disable-next-line: forin
+    if (nomeExterno.correto && nomeExterno.nome === this.baseService.pessoaSelecionada.nome) {
+      this.nav.navigateForward('/tela-sucesso');
+    } else {
+      this.nav.navigateBack('/home');
+    }
 
+  }
 }
