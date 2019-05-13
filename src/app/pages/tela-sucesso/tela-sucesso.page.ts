@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseService } from 'src/app/base.service';
 
 @Component({
   selector: 'app-tela-sucesso',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelaSucessoPage implements OnInit {
 
-  constructor() { }
+  constructor(private baseService: BaseService
+  ) { }
 
   ngOnInit() {
+    this.baseService.headerTitle = 'Senha temporaria';
   }
 
 }

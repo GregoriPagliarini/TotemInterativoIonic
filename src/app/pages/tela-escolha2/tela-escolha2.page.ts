@@ -19,6 +19,7 @@ export class TelaEscolha2Page implements OnInit {
     private nav: NavController) { }
 
   ngOnInit() {
+
     console.log(this.baseService.pessoaSelecionada.nome);
     this.baseService.headerTitle = 'Escolha o seu nome';
     const url = 'http://127.0.0.1:8000/tablet/nomes/';
@@ -32,9 +33,11 @@ export class TelaEscolha2Page implements OnInit {
     );
   }
 
+
   clicouNome(nomeExterno: NomeExterno) {
-    // tslint:disable-next-line: forin
-    if (nomeExterno.correto && nomeExterno.nome === this.baseService.pessoaSelecionada.nome) {
+    // tslint:disable-next-line: max-line-length
+    if (nomeExterno.correto && nomeExterno.nome === (this.baseService.pessoaSelecionada.nome + ' ' + this.baseService.pessoaSelecionada.sobrenome)) {
+      console.log('bleu');
       this.nav.navigateForward('/tela-sucesso');
     } else {
       this.nav.navigateBack('/home');
