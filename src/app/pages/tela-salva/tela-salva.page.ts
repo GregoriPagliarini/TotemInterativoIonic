@@ -9,7 +9,6 @@ export class TelaSalvaPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -1,10 +1,10 @@
 <ion-grid class="w-100">
   <ion-row class="ion-text-center">
-    
+
     <ion-col *ngFor="let nome of nomes | async" size="6">
       <ion-card style="height: 250px">
         <ion-card-header>
-          <ion-card-title style="height: 80px;" class="ion-text-center">
+          <ion-card-title style="height: 80px;" class="ion-text-center alinha-centro">
             {{nome.nome}}
           </ion-card-title>
         </ion-card-header>

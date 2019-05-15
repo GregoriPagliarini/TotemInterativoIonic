@@ -18,10 +18,7 @@ export class TelaEscolhaPage implements OnInit {
     private httpClient: HttpClient,
     private nav: NavController) { }
 
-
-
   ngOnInit() {
-    this.baseService.headerTitle = 'Escolha o seu CPF';
     const url = 'http://127.0.0.1:8000/tablet/cpfs/';
     this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
@@ -32,6 +29,18 @@ export class TelaEscolhaPage implements OnInit {
         this.nav.navigateForward('/home');
       }
     );
+  }
+
+  ionViewWillEnter() {
+    this.baseService.headerTitle = 'Escolha o seu CPF';
+  }
+
+  ionViewDidEnter() {
+    this.baseService.loading = false;
+  }
+
+  ionViewWillLeave() {
+    this.baseService.loading = true;
   }
 
   clicouCPF(cpfExterno: CpfExterno) {

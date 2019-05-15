@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TrocaSenhaPage } from './troca-senha.page';
 
 describe('TrocaSenhaPage', () => {
@@ -9,10 +8,10 @@ describe('TrocaSenhaPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrocaSenhaPage ],
+      declarations: [TrocaSenhaPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

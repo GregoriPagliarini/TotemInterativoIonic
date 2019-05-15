@@ -5,4 +5,6 @@ import { Pessoa } from './shared/classe.matricula';
 export class BaseService {
     headerTitle = '';
     pessoaSelecionada: Pessoa = null;
+    showBackButton = false;
+    loading = false;
 }

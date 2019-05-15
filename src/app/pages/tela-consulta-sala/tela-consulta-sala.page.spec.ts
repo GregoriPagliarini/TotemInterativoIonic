@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TelaConsultaSalaPage } from './tela-consulta-sala.page';
 
 describe('TelaConsultaSalaPage', () => {
@@ -9,10 +8,10 @@ describe('TelaConsultaSalaPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TelaConsultaSalaPage ],
+      declarations: [TelaConsultaSalaPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

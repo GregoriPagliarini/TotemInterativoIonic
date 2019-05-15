@@ -6,13 +6,21 @@ import { BaseService } from 'src/app/base.service';
   templateUrl: './tela-sucesso.page.html',
   styleUrls: ['./tela-sucesso.page.scss'],
 })
-export class TelaSucessoPage implements OnInit {
+export class TelaSucessoPage {
 
   constructor(private baseService: BaseService
   ) { }
 
-  ngOnInit() {
-    this.baseService.headerTitle = 'Senha temporaria';
+  ionViewWillEnter() {
+    this.baseService.headerTitle = 'Senha temporária';
+  }
+
+  ionViewDidEnter() {
+    this.baseService.loading = false;
+  }
+
+  ionViewWillLeave() {
+    this.baseService.loading = true;
   }
 
 }

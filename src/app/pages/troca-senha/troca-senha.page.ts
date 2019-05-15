@@ -14,11 +14,11 @@ import { BaseService } from 'src/app/base.service';
   styleUrls: ['./troca-senha.page.scss'],
 
 })
-export class TrocaSenhaPage implements OnInit {
+export class TrocaSenhaPage {
 
-  ERRO_GERAL_MATRICULA = 'Você não informou matrícula.';
-  ERRO_MATRICULA_INVALIDA = 'Matrícula inválida.';
-  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas.';
+  ERRO_GERAL_MATRICULA = 'Você não informou matrícula';
+  ERRO_MATRICULA_INVALIDA = 'Matrícula inválida';
+  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas';
 
   mensagemErroMatricula = null;
   matricula: string;
@@ -31,9 +31,11 @@ export class TrocaSenhaPage implements OnInit {
 
   getPesquisaMatricula() {
     if (this.matricula) {
+      this.baseService.loading = true;
       const url = 'http://127.0.0.1:8000/tablet/consulta/';
       this.httpClient.post<any>(url, { 'dado': this.matricula, }).subscribe(
         (retorno: any) => {
+          this.baseService.loading = false;
           const pessoas = retorno.pessoas;
           if (pessoas.length > 1) {
             this.mensagemErroMatricula = this.ERRO_MULTIPLAS_MATRICULAS;
@@ -43,13 +45,15 @@ export class TrocaSenhaPage implements OnInit {
               pessoaDict.nome,
               pessoaDict.sobrenome,
               pessoaDict.matricula,
-              pessoaDict.cpf);
+              pessoaDict.cpf,
+              pessoaDict.email);
             this.baseService.pessoaSelecionada = pessoa;
             this.nav.navigateForward('/tela-escolha');
           }
         },
         (error: any) => {
           this.mensagemErroMatricula = this.ERRO_MATRICULA_INVALIDA;
+          this.baseService.loading = false;
         }
       );
     } else {
@@ -70,8 +74,15 @@ export class TrocaSenhaPage implements OnInit {
     return await modal.present();
   }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.baseService.headerTitle = 'Trocar Senha';
   }
 
+  ionViewDidEnter() {
+    this.baseService.loading = false;
+  }
+
+  ionViewWillLeave() {
+    this.baseService.loading = true;
+  }
 }

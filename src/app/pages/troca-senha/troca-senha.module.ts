@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
 import { IonicModule } from '@ionic/angular';
 import { TrocaSenhaPage } from './troca-senha.page';
 import { ModalMatriculaPage } from '../modal-matricula/modal-matricula.page';
@@ -27,4 +26,4 @@ const routes: Routes = [
   entryComponents: [ModalMatriculaPage],
   exports: [TrocaSenhaPage]
 })
-export class TrocaSenhaPageModule {}
+export class TrocaSenhaPageModule { }

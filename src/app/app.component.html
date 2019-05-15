@@ -1,21 +1,33 @@
 <ion-app>
 
-    <ion-header>
-      <ion-toolbar class="ion-text-center cor-if-verde">
-        <h1 class="m-0"> <font color="white">{{baseService.headerTitle}}</font></h1>
-      </ion-toolbar>
-    </ion-header>
-    
-    <ion-content>
-        <ion-router-outlet></ion-router-outlet>
-    </ion-content>
+  <div *ngIf="baseService.loading" class="container-carregando">
+    <div class="inner">Carregando...</div>
+  </div>
 
-    <ion-footer class="cor-if-verdec">
-      <p class="tamanho-texto10p ion-text-center"><font color="white">
+  <ion-header>
+    <ion-toolbar class="ion-text-center cor-if-verde">
+      <ion-button *ngIf="baseService.showBackButton" routerLink="/" class="botao-voltar cor-if-verde-claro"
+        size="default" mode="md">
+        Voltar
+      </ion-button>
+      <h1 class="m-0">
+        <font color="white">{{baseService.headerTitle}}</font>
+      </h1>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+
+  <ion-footer class="cor-if-verdec">
+    <p class="tamanho-texto10p ion-text-center">
+      <font color="white">
         Desenvolvimento: Arthur Bassotto Ziero, Gregori Pagliarini Longhi, Samuel
         Balbinot, Vitor Ribeiro Queiroz
         <br>
-        juntamente com DTI do Campus Farroupilha</font></p>
-    </ion-footer>
-  
+        juntamente com DTI do Campus Farroupilha</font>
+    </p>
+  </ion-footer>
+
 </ion-app>

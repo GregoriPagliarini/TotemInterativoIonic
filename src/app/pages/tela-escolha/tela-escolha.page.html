@@ -1,10 +1,10 @@
 <ion-grid class="w-100">
   <ion-row class="ion-text-center">
-    
+
     <ion-col *ngFor="let cpf of cpfs | async" size="6">
       <ion-card style="height: 250px">
         <ion-card-header>
-          <ion-card-title style="height: 80px;" class="ion-text-center">
+          <ion-card-title style="height: 80px;" class="ion-text-center alinha-centro">
             {{cpf.cpf}}
           </ion-card-title>
         </ion-card-header>
@@ -15,5 +15,6 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
+
   </ion-row>
 </ion-grid>

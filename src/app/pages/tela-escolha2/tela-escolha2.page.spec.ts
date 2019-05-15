@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TelaEscolha2Page } from './tela-escolha2.page';
 
 describe('TelaEscolha2Page', () => {

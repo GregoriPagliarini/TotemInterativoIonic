@@ -7,17 +7,16 @@ import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { BaseService } from 'src/app/base.service';
 
-
 @Component({
   selector: 'app-modal-matricula',
   templateUrl: './modal-matricula.page.html',
   styleUrls: ['./modal-matricula.page.scss'],
 })
-export class ModalMatriculaPage implements OnInit, OnDestroy {
+export class ModalMatriculaPage {
 
-  ERRO_GERAL_CPF = 'Você não informou o CPF.';
-  ERRO_CPF_INVALIDA = 'CPF inválido.';
-  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas.';
+  ERRO_GERAL_CPF = 'Você não informou o CPF';
+  ERRO_CPF_INVALIDA = 'CPF inválido';
+  ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas';
 
   mensagemErroCpf = null;
   cpf: string;
@@ -45,7 +44,8 @@ export class ModalMatriculaPage implements OnInit, OnDestroy {
               pessoaDict.nome,
               pessoaDict.sobrenome,
               pessoaDict.matricula,
-              pessoaDict.cpf);
+              pessoaDict.cpf,
+              pessoaDict.email);
             this.baseService.pessoaSelecionada = pessoa;
             this.nav.navigateForward('/tela-escolha2');
           }
@@ -65,13 +65,6 @@ export class ModalMatriculaPage implements OnInit, OnDestroy {
 
   fechaModal() {
     this.modalmatriculaController.dismiss();
-  }
-
-  ngOnInit() {
-  }
-
-  ngOnDestroy() {
-
   }
 
 }

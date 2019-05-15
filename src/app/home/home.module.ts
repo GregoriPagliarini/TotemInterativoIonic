@@ -3,14 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule, NavController, ModalController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-
 import { HomePage } from './home.page';
-
-
-
-
-
 
 @NgModule({
   imports: [
@@ -30,9 +23,6 @@ export class HomePageModule {
 
   constructor() {
 
-
   }
-
-
 
 }
