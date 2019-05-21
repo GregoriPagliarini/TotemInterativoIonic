@@ -19,7 +19,7 @@ export class TelaEscolhaPage implements OnInit {
     private nav: NavController) { }
 
   ngOnInit() {
-    const url = 'http://127.0.0.1:8000/tablet/cpfs/';
+    const url = this.baseService.baseUrl + '/tablet/cpfs/';
     this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
         this.cpfs = of(retorno.pessoas);

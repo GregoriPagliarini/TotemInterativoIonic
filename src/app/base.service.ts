@@ -7,4 +7,5 @@ export class BaseService {
     pessoaSelecionada: Pessoa = null;
     showBackButton = false;
     loading = false;
+    baseUrl = "http://127.0.0.1:8000";
 }

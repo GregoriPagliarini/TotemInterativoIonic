@@ -3,8 +3,6 @@ import { NavController, ModalController } from '@ionic/angular';
 import { Pessoa } from 'src/app/shared/classe.matricula';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { BaseService } from 'src/app/base.service';
 
 @Component({
@@ -23,7 +21,6 @@ export class ModalMatriculaPage {
   pessoa$: Observable<Pessoa>;
 
   constructor(private nav: NavController,
-    private modalmatriculaController: ModalController,
     public httpClient: HttpClient,
     private baseService: BaseService) { }
 
@@ -31,7 +28,7 @@ export class ModalMatriculaPage {
 
     if (this.cpf) {
 
-      const url = 'http://127.0.0.1:8000/tablet/consulta/';
+      const url = this.baseService.baseUrl + '/tablet/consulta/';
       this.httpClient.post<any>(url, { 'dado': this.cpf, }).subscribe(
 
         (retorno: any) => {
@@ -45,7 +42,9 @@ export class ModalMatriculaPage {
               pessoaDict.sobrenome,
               pessoaDict.matricula,
               pessoaDict.cpf,
-              pessoaDict.email);
+              pessoaDict.email,
+              pessoaDict.senha_temporaria,
+              pessoaDict.senha_validade);
             this.baseService.pessoaSelecionada = pessoa;
             this.nav.navigateForward('/tela-escolha2');
           }
@@ -61,10 +60,6 @@ export class ModalMatriculaPage {
 
   digitando() {
     this.mensagemErroCpf = this.cpf.length === 0 ? this.ERRO_GERAL_CPF : null;
-  }
-
-  fechaModal() {
-    this.modalmatriculaController.dismiss();
   }
 
 }

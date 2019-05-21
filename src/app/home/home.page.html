@@ -1,75 +1,15 @@
-<ion-grid class="w-100">
-  <ion-row class="ion-text-center">
-    <ion-col size="6">
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-subtitle>
-            <i class="fas fa-key" style="font-size: 400%;"></i>
-          </ion-card-subtitle>
-          <ion-card-title style="height: 80px;" class="ion-text-center">
-            Clique para trocar a senha de login do wi-fi/acesso aos computadores nos
-            laboratórios.
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button routerLink="/troca-senha" expand="block" fill="solid" size="default" mode="md"
-            class="cor-if-verde">Trocar senha
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-
-    <ion-col>
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-subtitle>
-            <i class="fas fa-clock " style="font-size: 400%;"></i>
-          </ion-card-subtitle>
-          <ion-card-title style="height: 80px" class="ion-text-center">
-            Clique para visualizar os horários de suas aulas.
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Horário das aulas
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
+<div class="w-100 h-100">
+  <ion-row size="4" class="alinha-topo w-100">
+    <i class="fas fa-key" style="font-size: 400%;"></i>
   </ion-row>
-
-  <ion-row class="ion-text-center">
-    <ion-col size="6">
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-subtitle>
-            <i class="fas fa-calendar-alt" style="font-size: 400%;"></i>
-          </ion-card-subtitle>
-          <ion-card-title style="height: 80px" class="ion-text-center">
-            Clique para consultar os laboratórios e suas respectivas aulas.
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Consultar laboratórios
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-
-    <ion-col>
-      <ion-card style="height: 250px">
-        <ion-card-header>
-          <ion-card-subtitle>
-            <i class="fas fa-user-friends" style="font-size: 400%;"></i>
-          </ion-card-subtitle>
-          <ion-card-title style="height: 80px" class="ion-text-center">
-            Clique para mais informações sobre os setores.
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Setores
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
+  <ion-row size="4" class="alinha-centro w-100"> 
+    Clique para trocar a senha de login do wi-fi/acesso aos computadores nos
+    laboratórios.
   </ion-row>
-</ion-grid>
+  <ion-row size="4" class="alinha-base w-100">
+    <ion-button routerLink="/troca-senha" expand="block" fill="solid" size="default" mode="md"
+      class="cor-if-verde alinha-base">
+      Trocar senha
+    </ion-button>
+  </ion-row>
+</div>

@@ -32,7 +32,7 @@ export class TrocaSenhaPage {
   getPesquisaMatricula() {
     if (this.matricula) {
       this.baseService.loading = true;
-      const url = 'http://127.0.0.1:8000/tablet/consulta/';
+      const url = this.baseService.baseUrl + '/tablet/consulta/';
       this.httpClient.post<any>(url, { 'dado': this.matricula, }).subscribe(
         (retorno: any) => {
           this.baseService.loading = false;
@@ -46,7 +46,9 @@ export class TrocaSenhaPage {
               pessoaDict.sobrenome,
               pessoaDict.matricula,
               pessoaDict.cpf,
-              pessoaDict.email);
+              pessoaDict.email,
+              pessoaDict.senha_temporaria,
+              pessoaDict.senha_validade);
             this.baseService.pessoaSelecionada = pessoa;
             this.nav.navigateForward('/tela-escolha');
           }

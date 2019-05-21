@@ -9,9 +9,6 @@ const routes: Routes = [
   { path: 'tela-escolha2', loadChildren: './pages/tela-escolha2/tela-escolha2.module#TelaEscolha2PageModule' },
   { path: 'tela-sucesso', loadChildren: './pages/tela-sucesso/tela-sucesso.module#TelaSucessoPageModule' },
   // tslint:disable-next-line: max-line-length
-  { path: 'tela-consulta-horarios', loadChildren: './pages/tela-consulta-horarios/tela-consulta-horarios.module#TelaConsultaHorariosPageModule' },
-  { path: 'tela-consulta-sala', loadChildren: './pages/tela-consulta-sala/tela-consulta-sala.module#TelaConsultaSalaPageModule' },
-
 ];
 
 @NgModule({

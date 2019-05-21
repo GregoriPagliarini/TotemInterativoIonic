@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BaseService } from 'src/app/base.service';
 import { Observable, of } from 'rxjs';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { NomeExterno } from 'src/app/shared/classe.nome';
 
@@ -15,11 +15,12 @@ export class TelaEscolha2Page implements OnInit {
   nomes: Observable<NomeExterno[]>;
 
   constructor(private baseService: BaseService,
+    private  modalmatriculaController: ModalController,
     private httpClient: HttpClient,
     private nav: NavController) { }
 
   ngOnInit() {
-    const url = 'http://127.0.0.1:8000/tablet/nomes/';
+    const url = this.baseService.baseUrl + '/tablet/nomes/';
     this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
         this.nomes = of(retorno.pessoas);
@@ -31,6 +32,7 @@ export class TelaEscolha2Page implements OnInit {
   }
 
   ionViewWillEnter() {
+    this.modalmatriculaController.dismiss();
     this.baseService.headerTitle = 'Escolha o seu nome';
   }
 

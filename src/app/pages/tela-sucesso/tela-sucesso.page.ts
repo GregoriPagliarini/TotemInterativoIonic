@@ -16,6 +16,7 @@ export class TelaSucessoPage {
   }
 
   ionViewDidEnter() {
+    this.baseService.showBackButton = false;
     this.baseService.loading = false;
   }
 
