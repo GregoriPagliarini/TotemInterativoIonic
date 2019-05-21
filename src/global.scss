@@ -28,6 +28,11 @@
   height: 100%;
 }
 
+.h-33 {
+  height: 33%;
+}
+
+
 .h-90 {
   height: 90%;
 }
@@ -56,6 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .alinha-base {
@@ -145,4 +151,11 @@
   padding: 20px;
   background-color: white;
   border-radius: 10px;
+}
+
+.tela-inicial{
+  height: 70%;
+  width: 100%;
+  font-size: 300%;
+  margin: 1%;
 }
