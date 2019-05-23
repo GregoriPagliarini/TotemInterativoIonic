@@ -32,7 +32,7 @@ export class TelaEscolha2Page implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.modalmatriculaController.dismiss();
+    // this.modalmatriculaController.dismiss();
     this.baseService.headerTitle = 'Escolha o seu nome';
   }
 

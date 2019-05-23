@@ -42,9 +42,7 @@ export class ModalMatriculaPage {
               pessoaDict.sobrenome,
               pessoaDict.matricula,
               pessoaDict.cpf,
-              pessoaDict.email,
-              pessoaDict.senha_temporaria,
-              pessoaDict.senha_validade);
+              pessoaDict.email);
             this.baseService.pessoaSelecionada = pessoa;
             this.nav.navigateForward('/tela-escolha2');
           }

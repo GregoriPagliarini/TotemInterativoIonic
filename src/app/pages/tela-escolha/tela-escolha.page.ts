@@ -23,7 +23,6 @@ export class TelaEscolhaPage implements OnInit {
     this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
         this.cpfs = of(retorno.pessoas);
-        console.log(this.cpfs);
       },
       (error: any) => {
         this.nav.navigateForward('/home');
