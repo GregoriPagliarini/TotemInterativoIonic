@@ -6,7 +6,7 @@
         <div class="alinha-topo w-100">
             <ion-row>
                 <ion-col>
-                    <input autocomplete="off" type="text"
+                    <input #nomeInput autocomplete="off" type="text"
                         class="form-control w-100  tamanho-texto-caixa-de-texto caixa-texto" aria-label=""
                         (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
                     <div>

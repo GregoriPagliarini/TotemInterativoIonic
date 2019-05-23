@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { Pessoa } from 'src/app/shared/classe.matricula';
 import { HttpClient } from '@angular/common/http';
@@ -19,6 +19,8 @@ export class ModalMatriculaPage {
   mensagemErroCpf = null;
   cpf: string;
   pessoa$: Observable<Pessoa>;
+
+  @ViewChild('cpfInput') cpfInput;
 
   constructor(private nav: NavController,
     public httpClient: HttpClient,
@@ -54,6 +56,10 @@ export class ModalMatriculaPage {
     } else {
       this.mensagemErroCpf = this.ERRO_GERAL_CPF;
     }
+  }
+
+  ionViewDidEnter() {
+    this.cpfInput.nativeElement.focus();
   }
 
   digitando() {

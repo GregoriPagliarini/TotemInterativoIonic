@@ -15,7 +15,7 @@ export class TelaEscolha2Page implements OnInit {
   nomes: Observable<NomeExterno[]>;
 
   constructor(private baseService: BaseService,
-    private  modalmatriculaController: ModalController,
+    private modalmatriculaController: ModalController,
     private httpClient: HttpClient,
     private nav: NavController) { }
 
@@ -37,6 +37,7 @@ export class TelaEscolha2Page implements OnInit {
   }
 
   ionViewDidEnter() {
+    this.modalmatriculaController.dismiss();
     this.baseService.loading = false;
   }
 

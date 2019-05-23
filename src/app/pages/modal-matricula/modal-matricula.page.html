@@ -20,9 +20,9 @@
       </div>
       <div class="alinha-topo w-100">
         <ion-row>
-          <ion-col>
+          <ion-col size="12">
             <div>
-              <input type="text" class="form-control w-100 tamanho-texto-caixa-de-texto caixa-texto" [(ngModel)]="cpf"
+              <input #cpfInput style="width: 100%" maxlength="11" type="text" class="form-control w-100 tamanho-texto-caixa-de-texto caixa-texto" [(ngModel)]="cpf"
                 (keyup)="digitando()" aria-label="CPF">
             </div>
             <div>

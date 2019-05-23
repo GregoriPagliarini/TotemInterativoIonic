@@ -1,9 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { of, EMPTY } from 'rxjs';
-import { switchMap, catchError, map } from 'rxjs/operators';
 import { Pessoa } from '../../shared/classe.matricula';
 import { ModalMatriculaPage } from '../modal-matricula/modal-matricula.page';
 import { BaseService } from 'src/app/base.service';
@@ -16,12 +13,15 @@ import { BaseService } from 'src/app/base.service';
 })
 export class TrocaSenhaPage {
 
+
   ERRO_GERAL_MATRICULA = 'Você não informou matrícula';
   ERRO_MATRICULA_INVALIDA = 'Matrícula inválida';
   ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas';
 
   mensagemErroMatricula = null;
   matricula: string;
+
+  @ViewChild('nomeInput') nomeInput;
 
   constructor(private nav: NavController,
     private modalmatriculaController: ModalController,
@@ -79,6 +79,7 @@ export class TrocaSenhaPage {
   }
 
   ionViewDidEnter() {
+    this.nomeInput.nativeElement.focus();
     this.baseService.loading = false;
   }
 
