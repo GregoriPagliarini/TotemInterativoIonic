@@ -1,6 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, PopoverController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { BaseService } from '../base.service';
 
 @Component({
@@ -8,15 +7,24 @@ import { BaseService } from '../base.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
-  constructor(private nav: NavController, 
-              private modalmatriculaController: ModalController, 
-              private popoverController: PopoverController,
-              private baseService: BaseService){
+  constructor(private nav: NavController,
+              private modalmatriculaController: ModalController,
+              private baseService: BaseService) {
   }
 
-  ngOnInit() {
+  ionViewWillLeave() {
+    this.baseService.showBackButton = true;
+    this.baseService.loading = true;
+  }
+
+  ionViewWillEnter() {
+    this.baseService.showBackButton = false;
     this.baseService.headerTitle = 'Posso te ajudar?';
+  }
+
+  ionViewDidEnter() {
+    this.baseService.loading = false;
   }
 }

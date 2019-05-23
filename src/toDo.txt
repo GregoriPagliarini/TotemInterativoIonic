@@ -1,2 +1,0 @@
-Rodapé geral;
-Não é funcional adicionar o rodapé todas as telas, pois se surgir a necessidade de modificação terá que modificar todas

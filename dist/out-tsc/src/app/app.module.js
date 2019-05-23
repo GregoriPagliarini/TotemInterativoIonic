@@ -7,7 +7,6 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PopoverPageModule } from './pages/popover/popover.module';
 import { ModalMatriculaPageModule } from './pages/modal-matricula/modal-matricula.module';
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -17,7 +16,7 @@ var AppModule = /** @class */ (function () {
             declarations: [AppComponent],
             entryComponents: [],
             imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-                ModalMatriculaPageModule, PopoverPageModule
+                ModalMatriculaPageModule
             ],
             providers: [
                 StatusBar,

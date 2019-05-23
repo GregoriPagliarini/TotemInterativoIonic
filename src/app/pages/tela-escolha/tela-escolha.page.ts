@@ -19,20 +19,34 @@ export class TelaEscolhaPage implements OnInit {
     private nav: NavController) { }
 
   ngOnInit() {
-    this.baseService.headerTitle = 'Escolha o seu CPF';
-    const url = "http://127.0.0.1:8000/tablet/cpfs/";
+    const url = this.baseService.baseUrl + '/tablet/cpfs/';
     this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
         this.cpfs = of(retorno.pessoas);
       },
       (error: any) => {
-        this.nav.navigateForward("/home");
+        this.nav.navigateForward('/home');
       }
     );
   }
 
-  clicouCPF(cpf: string) {
-    console.log(cpf);
-    this.nav.navigateForward("/home");
+  ionViewWillEnter() {
+    this.baseService.headerTitle = 'Escolha o seu CPF';
+  }
+
+  ionViewDidEnter() {
+    this.baseService.loading = false;
+  }
+
+  ionViewWillLeave() {
+    this.baseService.loading = true;
+  }
+
+  clicouCPF(cpfExterno: CpfExterno) {
+    if (cpfExterno.correto && cpfExterno.cpf === this.baseService.pessoaSelecionada.cpf) {
+      this.nav.navigateForward('/tela-escolha2');
+    } else {
+      this.nav.navigateBack('/home');
+    }
   }
 }

@@ -1,11 +1,10 @@
 import * as tslib_1 from "tslib";
 import { Component } from '@angular/core';
-import { NavController, ModalController, PopoverController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 var HomePage = /** @class */ (function () {
-    function HomePage(nav, modalmatriculaController, popoverController) {
+    function HomePage(nav, modalmatriculaController) {
         this.nav = nav;
         this.modalmatriculaController = modalmatriculaController;
-        this.popoverController = popoverController;
     }
     HomePage.prototype.pushPage = function () {
         this.nav.navigateForward('/troca-senha/');
@@ -17,8 +16,7 @@ var HomePage = /** @class */ (function () {
             styleUrls: ['home.page.scss'],
         }),
         tslib_1.__metadata("design:paramtypes", [NavController,
-            ModalController,
-            PopoverController])
+            ModalController])
     ], HomePage);
     return HomePage;
 }());

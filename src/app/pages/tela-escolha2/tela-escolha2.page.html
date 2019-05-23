@@ -1,62 +1,20 @@
 <ion-grid class="w-100">
-    <ion-row class="ion-text-center">
-      <ion-col size="6">
-        <ion-card style="height: 250px">
-          <ion-card-header>
-            <ion-card-title style="height: 80px;" class="ion-text-center">
-              Nome1
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button routerLink="/tela-escolha2" expand="block" fill="solid" size="default" mode="md"
-              class="cor-if-verde">Enviar
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-  
-      <ion-col>
-        <ion-card style="height: 250px">
-          <ion-card-header>
-            <ion-card-title style="height: 80px" class="ion-text-center">
-              Nome2
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  
-    <ion-row class="ion-text-center">
-      <ion-col size="6">
-        <ion-card style="height: 250px">
-          <ion-card-header>
-            <ion-card-title style="height: 80px" class="ion-text-center">
-              Nome3
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-  
-      <ion-col>
-        <ion-card style="height: 250px">
-          <ion-card-header>
-            <ion-card-title style="height: 80px" class="ion-text-center">
-              Nome4
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button expand="block" fill="solid" size="default" mode="md" class="cor-if-verde">Enviar
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-row class="ion-text-center">
+
+    <ion-col *ngFor="let nome of nomes | async" size="6">
+      <ion-card style="height: 250px">
+        <ion-card-header>
+          <ion-card-title style="height: 80px;" class="ion-text-center alinha-centro">
+            {{nome.nome}}
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="clicouNome(nome)" expand="block" fill="solid" size="default" mode="md"
+            class="cor-if-verde">Enviar
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
