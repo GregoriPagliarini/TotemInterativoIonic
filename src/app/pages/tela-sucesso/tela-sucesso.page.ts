@@ -31,7 +31,7 @@ export class TelaSucessoPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.baseService.headerTitle = 'Senha temporária';
+    this.baseService.headerTitle = 'Sucesso';
   }
 
   ionViewDidEnter() {

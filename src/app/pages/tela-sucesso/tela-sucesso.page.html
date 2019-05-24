@@ -1,25 +1,22 @@
-<ion-col class="alinha-centro">
-    <ion-card style="height: 180px">
-        <ion-card-header>
-            <div class="">
-                <h2 class="ion-text-center">Sua senha temporária para acesso a internet é:</h2>
-                <h1 class="ion-text-center" *ngIf="(senhaTemporaria | async) as senhaTemporaria">
-                    {{senhaTemporaria.senha}}
-                </h1>
-                <h2 class="ion-text-center">Esta senha é valida por 10 minutos, acesse seu e-mail após efetuar login e
-                    faça a confirmação de senha.</h2>
-            </div>
-        </ion-card-header>
-    </ion-card>
 
-</ion-col>
-
-<ion-col class="alinha-centro">
+<div class="h-33">
+<ion-card style="height: 200px">
     <ion-card-header>
         <div class="">
-            <ion-button routerLink="/" class="cor-if-verde ion-text-center mt-0 mb-0 m-15p" size="default" mode="md">
-                <i class="fas fa-home"></i> Voltar para o Início
-            </ion-button>
+            <h2 class="ion-text-center">Sua senha temporária para acesso a internet é:</h2>
+            <h1 class="ion-text-center" *ngIf="(senhaTemporaria | async) as senhaTemporaria">
+               <font color="black"><b> {{senhaTemporaria.senha}} </b></font>
+            </h1>
+            <h2 class="ion-text-center">Esta senha é valida por 10 minutos.
+                Acesse seu e-mail e faça a troca de senha.</h2>
         </div>
     </ion-card-header>
-</ion-col>
+</ion-card>
+</div>
+
+<div class="h-33 alinha-centro">
+    <ion-button routerLink="/" class="cor-if-verde tela-inicial" size="default"
+        mode="md">
+        <i class="fas fa-home"></i> Voltar para o Início
+    </ion-button>
+</div>

@@ -1,17 +1,17 @@
 <div class="h-100">
     <div class="display-wrap display-flex h-100">
-        <div class=" alinha-topo w-100">
-            <h1 class="card-text caixa-texto">Digite sua matrícula</h1>
+        <div class=" alinha-topo w-100 h-33">
+            <h1 class="card-text caixa-texto"  style="font-size: 200%;">Digite sua matrícula</h1>
         </div>
-        <div class="alinha-topo w-100">
-            <ion-row>
+        <div class="alinha-topo w-100 h-33">
+            <ion-row class="h-100">
                 <ion-col>
-                    <input #nomeInput autocomplete="off" type="text"
+                    <input #nomeInput autocomplete="off" type="text" maxlength="10"
                         class="form-control w-100  tamanho-texto-caixa-de-texto caixa-texto" aria-label=""
                         (keyup)="digitando()" name="matricula" [(ngModel)]="matricula">
                     <div>
                         <ion-button expand="" fill="solid" size="default" mode="md"
-                            class="cor-if-verde mt-0 mb-0 alinha-centro" (click)="getPesquisaMatricula()">Enviar
+                            class="cor-if-verde mt-0 mb-0 alinha-base" (click)="getPesquisaMatricula()">Enviar
                         </ion-button>
                     </div>
                     <div *ngIf="mensagemErroMatricula" class="alinha-centro">
@@ -20,7 +20,7 @@
                 </ion-col>
             </ion-row>
         </div>
-        <div class="alinha-base w-100">
+        <div class="alinha-base w-100 h-33">
             <ion-button expand="" fill="solid" size="default" mode="md" class="cor-if-verde mt-0 mb-0 m-15p"
                 (click)="openModalMatricula()">Não sabe sua matrícula?</ion-button>
         </div>
