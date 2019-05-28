@@ -14,7 +14,7 @@ export class TelaEscolhaPage implements OnInit {
 
   cpfs: Observable<CpfExterno[]>;
 
-  constructor(private baseService: BaseService,
+  constructor(public baseService: BaseService,
     private httpClient: HttpClient,
     private nav: NavController) { }
 
@@ -35,10 +35,12 @@ export class TelaEscolhaPage implements OnInit {
   }
 
   ionViewDidEnter() {
+    this.baseService.escolha = true;
     this.baseService.loading = false;
   }
 
   ionViewWillLeave() {
+    this.baseService.escolha = false;
     this.baseService.loading = true;
   }
 

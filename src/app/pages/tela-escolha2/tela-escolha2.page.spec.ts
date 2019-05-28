@@ -8,10 +8,10 @@ describe('TelaEscolha2Page', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TelaEscolha2Page ],
+      declarations: [TelaEscolha2Page],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

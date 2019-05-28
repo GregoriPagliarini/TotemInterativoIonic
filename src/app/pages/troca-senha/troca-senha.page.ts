@@ -13,7 +13,6 @@ import { BaseService } from 'src/app/base.service';
 })
 export class TrocaSenhaPage {
 
-
   ERRO_GERAL_MATRICULA = 'Você não informou matrícula';
   ERRO_MATRICULA_INVALIDA = 'Matrícula inválida';
   ERRO_MULTIPLAS_MATRICULAS = 'Múltiplas matrículas encontradas';
@@ -25,7 +24,7 @@ export class TrocaSenhaPage {
 
   constructor(private nav: NavController,
     private modalmatriculaController: ModalController,
-    private baseService: BaseService,
+    public baseService: BaseService,
     public httpClient: HttpClient
   ) { }
 
@@ -79,11 +78,12 @@ export class TrocaSenhaPage {
   }
 
   ionViewDidEnter() {
-    this.nomeInput.nativeElement.focus();
+    this.baseService.trocaSenha = true;
     this.baseService.loading = false;
   }
 
   ionViewWillLeave() {
+    this.baseService.trocaSenha = false;
     this.baseService.loading = true;
   }
 }

@@ -1,12 +1,15 @@
-<div class="h-33 alinha-base">
-  <i class="fas fa-key" style="font-size: 600%;"></i>
-</div>
-<div class="h-33 alinha-centro" style="font-size: 200%;">
-  Clique para trocar a senha de login do Wi-Fi/acesso aos computadores nos
-  laboratórios.
-</div>
-<div class="h-33 alinha-topo">
-  <ion-button routerLink="/troca-senha" expand="block" fill="solid" size="default" mode="md" class="cor-if-verde tela-inicial">
-    Trocar senha
-  </ion-button>
+<div class="w-100 h-100" *ngIf="baseService.home">
+  <div class="h-33 alinha-base">
+    <i class="fas fa-key" style="font-size: 600%;"></i>
+  </div>
+  <div class="h-33 alinha-centro" style="font-size: 200%;">
+    Clique para trocar a senha de login do Wi-Fi/acesso aos computadores nos
+    laboratórios.
+  </div>
+  <div class="h-33 alinha-topo">
+    <ion-button (click)="abreTrocaSenha()" expand="block" fill="solid" size="default" mode="md"
+      class="cor-if-verde tela-inicial">
+      Trocar senha
+    </ion-button>
+  </div>
 </div>

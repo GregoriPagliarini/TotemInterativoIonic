@@ -20,14 +20,11 @@
     <ion-router-outlet></ion-router-outlet>
   </ion-content>
 
-  <ion-footer class="cor-if-verdec">
+  <ion-footer class="cor-if-verdec" *ngIf="baseService.footerOn">
     <p class="tamanho-texto20p ion-text-center m-2">
       <font color="white">
-        Desenvolvimento: Arthur Bassotto Ziero, Gregori Pagl iarini Longhi, Samuel
-        Balbinot, Vitor Queiroz Ribeiro
-        <br>
-        juntamente com DTI do Campus Farroupilha</font>
+        Desenvolvimento: Arthur Bassotto Ziero, Gregori Pagliarini Longhi, Samuel
+        Balbinot, Vitor Queiroz Ribeiro, juntamente com DTI do Campus Farroupilha</font>
     </p>
   </ion-footer>
-
 </ion-app>

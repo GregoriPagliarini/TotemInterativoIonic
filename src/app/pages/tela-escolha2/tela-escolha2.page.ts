@@ -14,7 +14,7 @@ export class TelaEscolha2Page implements OnInit {
 
   nomes: Observable<NomeExterno[]>;
 
-  constructor(private baseService: BaseService,
+  constructor(public baseService: BaseService,
     private modalmatriculaController: ModalController,
     private httpClient: HttpClient,
     private nav: NavController) { }
@@ -32,16 +32,17 @@ export class TelaEscolha2Page implements OnInit {
   }
 
   ionViewWillEnter() {
-    // this.modalmatriculaController.dismiss();
     this.baseService.headerTitle = 'Escolha o seu nome';
   }
 
   ionViewDidEnter() {
+    this.baseService.escolha2 = true;
     this.modalmatriculaController.dismiss();
     this.baseService.loading = false;
   }
 
   ionViewWillLeave() {
+    this.baseService.escolha2 = false;
     this.baseService.loading = true;
   }
 

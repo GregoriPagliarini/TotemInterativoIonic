@@ -14,7 +14,7 @@ export class TelaSucessoPage implements OnInit {
 
   senhaTemporaria: Observable<SenhaTemporaria> = null;
 
-  constructor(private baseService: BaseService,
+  constructor(public baseService: BaseService,
     private httpClient: HttpClient,
     private nav: NavController) { }
 
@@ -35,11 +35,13 @@ export class TelaSucessoPage implements OnInit {
   }
 
   ionViewDidEnter() {
+    this.baseService.telaSucesso = true;
     this.baseService.showBackButton = false;
     this.baseService.loading = false;
   }
 
   ionViewWillLeave() {
+    this.baseService.telaSucesso = false;
     this.baseService.loading = true;
   }
 

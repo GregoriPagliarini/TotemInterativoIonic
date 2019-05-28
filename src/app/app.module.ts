@@ -6,8 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ModalMatriculaPageModule } from './pages/modal-matricula/modal-matricula.module';
 import { BaseService } from './base.service';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +18,9 @@ import { BaseService } from './base.service';
     StatusBar,
     SplashScreen,
     BaseService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    {
+      provide: RouteReuseStrategy, useClass: IonicRouteStrategy
+    }, NativePageTransitions
   ],
   bootstrap: [AppComponent]
 })

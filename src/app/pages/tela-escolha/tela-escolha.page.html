@@ -1,7 +1,7 @@
-<ion-grid class="w-100">
+<ion-grid class="w-100" *ngIf="baseService.escolha">
   <ion-row class="ion-text-center">
-
     <ion-col *ngFor="let cpf of cpfs | async" size="6">
+
       <ion-card>
         <ion-card-header>
           <ion-card-title style="height: 80px;" class="ion-text-center alinha-centro">
