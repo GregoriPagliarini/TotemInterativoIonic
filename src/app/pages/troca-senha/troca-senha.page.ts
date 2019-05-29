@@ -74,11 +74,11 @@ export class TrocaSenhaPage {
   }
 
   ionViewWillEnter() {
+    this.baseService.trocaSenha = true;
     this.baseService.headerTitle = 'Trocar Senha';
   }
 
   ionViewDidEnter() {
-    this.baseService.trocaSenha = true;
     this.nomeInput.nativeElement.focus();
     this.baseService.loading = false;
   }

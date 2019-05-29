@@ -3,16 +3,15 @@ import { Pessoa } from './shared/classe.matricula';
 
 @Injectable()
 export class BaseService {
-    home = true;
-    trocaSenha = true;
-    escolha = true;
-    escolha2 = true;
-    telaSucesso = true;
-    botaoInicial = false;
+    home = false;
+    trocaSenha = false;
+    escolha = false;
+    escolha2 = false;
+    telaSucesso = false;
     headerTitle = '';
     footerOn = false;
     pessoaSelecionada: Pessoa = null;
     showBackButton = false;
     loading = false;
-    baseUrl = 'http://127.0.0.1:8000';
+    baseUrl = 'http://192.168.0.60/tablet';
 }
