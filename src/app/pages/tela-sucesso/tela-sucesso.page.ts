@@ -19,10 +19,19 @@ export class TelaSucessoPage implements OnInit {
     private nav: NavController) { }
 
   ngOnInit() {
-    const url = this.baseService.baseUrl + '/tablet/senha_temporaria/';
-    this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
+    const urlEmail = this.baseService.baseUrl + '/tablet/reset/';
+    this.httpClient.post<any>(urlEmail, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
       (retorno: any) => {
-        this.senhaTemporaria = of(new SenhaTemporaria(retorno.senha_temporaria));
+        const url = this.baseService.baseUrl + '/tablet/senha_temporaria/';
+        this.httpClient.post<any>(url, { pk: this.baseService.pessoaSelecionada.pk }).subscribe(
+          (retorno2: any) => {
+            this.senhaTemporaria = of(new SenhaTemporaria(retorno2.senha_temporaria));
+            this.baseService.loading = false;
+          },
+          (error: any) => {
+            this.nav.navigateForward('/home');
+          }
+        );
       },
       (error: any) => {
         this.nav.navigateForward('/home');
@@ -37,7 +46,6 @@ export class TelaSucessoPage implements OnInit {
   ionViewDidEnter() {
     this.baseService.telaSucesso = true;
     this.baseService.showBackButton = false;
-    this.baseService.loading = false;
   }
 
   ionViewWillLeave() {

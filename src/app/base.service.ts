@@ -13,5 +13,5 @@ export class BaseService {
     pessoaSelecionada: Pessoa = null;
     showBackButton = false;
     loading = false;
-    baseUrl = 'http://192.168.0.60/tablet';
+    baseUrl = 'https://web.farroupilha.ifrs.edu.br/tcc/tablet';
 }
